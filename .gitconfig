@@ -6,8 +6,14 @@
 	editor = nvim
 	quotePath = false
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[interactive]
-	diffFilter = diff-so-fancy --patch
+[init]
+	defaultBranch = master
+[commit]
+	gpgSign = true
+[fetch]
+	prune = true
+[pull]
+	ff = only
 [merge]
 	tool = nvimdiff
 	conflictstyle = diff3
@@ -15,28 +21,22 @@
 	keepBackup = false
 [mergetool "nvimdiff"]
 	cmd = nvim -d $LOCAL $BASE $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[color]
-	ui = auto
 [alias]
 	st = status
 	l = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --topo-order
 	lg = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --all --topo-order
+[color]
+	ui = auto
+[interactive]
+	diffFilter = diff-so-fancy --patch
 [diff-so-fancy]
 	stripLeadingSymbols = false
-[pull]
-	ff = only
 [diff "json"]
 	textconv = python -m json.tool
-[init]
-	defaultBranch = master
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	gpgSign = true
-[fetch]
-	prune = true
 [include]
 	path = .gitconfig.local
