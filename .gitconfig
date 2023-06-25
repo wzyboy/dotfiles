@@ -1,0 +1,47 @@
+# vim: ft=gitconfig:
+[user]
+	name = Zhuoyun Wei
+	useConfigOnly = true
+	signingkey = 8EBA0BDB
+[core]
+	editor = nvim
+	quotePath = false
+[merge]
+	tool = nvimdiff
+	conflictstyle = diff3
+[mergetool]
+	keepBackup = false
+[mergetool "nvimdiff"]
+	cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[color]
+	ui = auto
+[push]
+	followTags = true
+[alias]
+	st = status
+	l = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --topo-order
+	lg = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --all --topo-order
+[credential]
+	credentialStore = plaintext
+#	helper = netrc
+	helper = /usr/bin/git-credential-manager
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+[commit]
+	gpgSign = true
+[diff-so-fancy]
+	stripLeadingSymbols = false
+[pull]
+	ff = only
+[diff "json"]
+	textconv = python -m json.tool
+[init]
+	defaultBranch = master
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[include]
+	path = .gitconfig.local
