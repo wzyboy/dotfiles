@@ -14,7 +14,7 @@ shopt -s checkwinsize
 shopt -s histappend
 
 # functions
-try_source () {
+try_source() {
     [[ -f "$1" ]] && source "$1"
 }
 path_insert() {
@@ -24,8 +24,8 @@ path_insert() {
 }
 
 # paths
-path_insert ${HOME}/bin/
-path_insert ${HOME}/.local/bin/
+path_insert ${HOME}/bin
+path_insert ${HOME}/.local/bin
 
 # aliases
 alias ls='ls --color=auto -N'
