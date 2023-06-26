@@ -43,16 +43,25 @@ set rnu signcolumn=yes
 
 " Looks
 lua <<EOF
---require("tokyonight").setup({
---  transparent = true,
---})
+-- Treesitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = {
+    "c", "lua", "vim", "vimdoc", "query",
+    "python", "terraform", "beancount",
+  },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+}
 EOF
 set termguicolors
 colorscheme tokyonight-night
 set noshowmode
 let g:lightline = {'colorscheme': 'tokyonight'}
 
-" Maps
+" Key mapping
 cnoreabbrev q1 q!
 vmap D dO[...]<Esc>
 nmap <F8> :set nobomb fenc=utf-8 ff=unix<CR>
@@ -92,7 +101,7 @@ nmap Pe :%!gpg -er
 nmap Pb :%!gpg -ser 
 nmap Pd :%!gpg -d<CR>
 
-" Completion
+" LSP
 lua << EOF
 -- Customize how diagnostics are displayed
 vim.diagnostic.config({
@@ -235,19 +244,6 @@ cmp.setup({
     end,
   },
 })
-
--- Treesitter
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "c", "lua", "vim", "vimdoc", "query",
-    "python", "terraform", "beancount",
-  },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
-}
 EOF
 
 " ALE
