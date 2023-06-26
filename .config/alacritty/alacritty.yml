@@ -519,12 +519,16 @@ hints:
      hyperlinks: true
      command: xdg-open
      post_processing: true
-     mouse:
-       enabled: true
-       mods: Control
      binding:
        key: X
        mods: Control|Shift
+   - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+     action: Copy
+     post_processing: true
+     mouse:
+       enabled: true
+       mods: Control
 
 # Mouse bindings
 #
