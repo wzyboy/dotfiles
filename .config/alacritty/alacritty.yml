@@ -523,7 +523,7 @@ hints:
        enabled: true
        mods: Control
      binding:
-       key: U
+       key: X
        mods: Control|Shift
 
 # Mouse bindings
