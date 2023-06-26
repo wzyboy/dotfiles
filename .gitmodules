@@ -4,3 +4,9 @@
 [submodule ".local/diff-so-fancy"]
 	path = .local/diff-so-fancy
 	url = https://github.com/so-fancy/diff-so-fancy.git
+[submodule ".local/fzf-extras"]
+	path = .local/fzf-extras
+	url = https://github.com/atweiden/fzf-extras.git
+[submodule ".local/fzf"]
+	path = .local/fzf
+	url = https://github.com/junegunn/fzf.git
