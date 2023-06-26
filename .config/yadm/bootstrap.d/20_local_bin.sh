@@ -7,7 +7,7 @@ pushd ~/.local/bin
 ln -svf ../diff-so-fancy/diff-so-fancy
 
 # fzf
-../fzf/install --bin
+../fzf/install --all
 ln -svf ../fzf/bin/fzf
 
 popd

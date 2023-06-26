@@ -49,10 +49,8 @@ export _Z_EXCLUDE_DIRS=(/run /nfs)
 try_source ~/.local/z/z.sh
 
 # fzf
-try_source /usr/share/fzf/key-bindings.bash
-try_source /usr/share/fzf/fzf-extras.bash
 try_source ~/.fzf.bash
-try_source ~/.fzf-extras/fzf-extras.sh
+try_source ~/.local/fzf-extras/fzf-extras.sh
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--exact --no-mouse"

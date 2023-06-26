@@ -4,7 +4,6 @@ call plug#begin()
 Plug 'folke/tokyonight.nvim'
 Plug 'itchyny/lightline.vim'
 " utilities
-Plug 'junegunn/fzf',           { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
 " completion
