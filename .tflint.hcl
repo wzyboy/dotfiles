@@ -15,6 +15,10 @@ rule "terraform_required_version" {
   enabled = false
 }
 
+rule "terraform_deprecated_interpolation" {
+  enabled = false
+}
+
 plugin "aws" {
   enabled = true
   version = "0.21.1"
