@@ -11,6 +11,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
 Plug 'neovim/nvim-lspconfig'
+Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-omni'
@@ -113,6 +114,11 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
+
+-- lsp_signature
+require('lsp_signature').setup({
+  hint_enable = false,
+})
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
