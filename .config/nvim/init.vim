@@ -62,18 +62,12 @@ set noshowmode
 let g:lightline = {'colorscheme': 'tokyonight'}
 
 " Key mapping
-cnoreabbrev q1 q!
 vmap D dO[...]<Esc>
-nmap <F8> :set nobomb fenc=utf-8 ff=unix<CR>
-nmap <F12> ggg?G
 nmap T :tabnew<CR>
 nmap gx :tabclose<CR>
 nmap F :Ag<CR>
 nmap <C-f> :Files<CR>
 nmap gs :%s/
-nmap gc :setlocal spell! spelllang=en_us<CR>
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
 
 " Filetypes
 autocmd BufNewFile,BufRead /tmp/mutt-* set filetype=mail
