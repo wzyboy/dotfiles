@@ -42,6 +42,7 @@ set splitright splitbelow
 set nohls noincsearch
 set completeopt=menuone
 set rnu signcolumn=yes
+set nofoldenable
 
 " Looks
 lua <<EOF
@@ -88,7 +89,8 @@ autocmd FileType sh imap <F3> #!/bin/bash -<CR><CR>
 autocmd FileType python imap <F3> #!/usr/bin/env python<CR><CR>
 autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
 autocmd FileType csv nmap <C-k> :WhatColumn!<CR>
-autocmd FileType terraform set foldmethod=expr foldexpr=nvim_treesitter#foldexpr() nofoldenable
+autocmd FileType terraform set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
+autocmd FileType beancount set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 
 " GnuPG
 set noshelltemp
