@@ -23,6 +23,7 @@ Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'crispgm/cmp-beancount'
 " file types
 Plug 'chrisbra/csv.vim',
+Plug 'Glench/Vim-Jinja2-Syntax',        { 'for': 'jinja.html' }
 Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 call plug#end()
