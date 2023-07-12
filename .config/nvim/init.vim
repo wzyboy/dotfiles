@@ -81,6 +81,7 @@ autocmd BufNewFile,BufRead /tmp/bash-fc-* set filetype=sh
 autocmd BufNewFile,BufRead /var/log/* set filetype=messages
 autocmd BufNewFile,BufRead *.lr set filetype=markdown
 autocmd BufNewFile,BufRead *.sentinel set filetype=terraform
+autocmd BufNewFile,BufRead *.tfvars set filetype=terraform
 autocmd FileType text set textwidth=78
 autocmd FileType mail set textwidth=72
 autocmd FileType gitcommit set textwidth=72
