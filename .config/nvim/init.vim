@@ -111,6 +111,12 @@ vim.diagnostic.config({
   severity_sort = false,
 })
 
+-- Hide LSP semantic highlights (use treesitter)
+-- https://neovim.io/doc/user/lsp.html#lsp-semantic-highlight
+for _, group in ipairs(vim.fn.getcompletion("@lsp", "highlight")) do
+  vim.api.nvim_set_hl(0, group, {})
+end
+
 -- lsp_signature
 require('lsp_signature').setup({
   hint_enable = false,
