@@ -10,3 +10,6 @@
 [submodule ".local/fzf"]
 	path = .local/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule ".local/git-fire"]
+	path = .local/git-fire
+	url = https://github.com/qw3rtman/git-fire.git
