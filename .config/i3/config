@@ -20,9 +20,9 @@ hide_edge_borders both
 
 bindsym XF86MonBrightnessUp exec "xbacklight +5"
 bindsym XF86MonBrightnessDown exec "xbacklight -5"
-bindsym XF86AudioRaiseVolume exec "amixer sset Master '3%+'"
-bindsym XF86AudioLowerVolume exec "amixer sset Master '3%-'"
-bindsym XF86AudioMute exec "amixer sset Master toggle"
+bindsym XF86AudioRaiseVolume exec "pamixer --increase 3"
+bindsym XF86AudioLowerVolume exec "pamixer --decrease 3"
+bindsym XF86AudioMute exec "pamixer --toggle-mute"
 bindsym XF86Display exec --no-startup-id "arandr"
 
 # Font for window titles. Will also be used by the bar unless a different font
