@@ -16,3 +16,4 @@ hostname
 config
 unencrypted
 repo
+serverless
