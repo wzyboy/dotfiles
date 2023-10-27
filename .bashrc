@@ -29,9 +29,9 @@ path_insert ${HOME}/.local/bin
 
 # aliases
 alias ls='ls --color=auto -N'
-if [[ -x $(command -v lsd) ]]; then
-  alias l='lsd -l --icon never'
-  alias ll='lsd -la --icon never'
+if [[ -x $(command -v exa) ]]; then
+  alias l='exa -lbg --time-style=long-iso'
+  alias ll='exa -lbga --time-style=long-iso'
 else
   alias l='ls -lF --time-style=long-iso'
   alias ll='ls -alF --time-style=long-iso'
