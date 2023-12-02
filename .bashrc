@@ -56,8 +56,9 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS="--exact --no-mouse"
 
 # git
-try_source /usr/share/git/git-prompt.sh
-try_source /usr/lib/git-core/git-sh-prompt
+try_source /usr/share/git/git-prompt.sh  # Arch
+try_source /usr/lib/git-core/git-sh-prompt  # Ubuntu
+try_source /usr/share/git-core/contrib/completion/git-prompt.sh  # Fedora
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
