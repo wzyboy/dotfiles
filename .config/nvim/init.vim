@@ -26,6 +26,7 @@ Plug 'chrisbra/csv.vim',
 Plug 'Glench/Vim-Jinja2-Syntax',        { 'for': 'jinja.html' }
 Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'ray-x/go.nvim'
 call plug#end()
 
 " Basics
@@ -94,6 +95,20 @@ autocmd FileType csv nmap <C-k> :WhatColumn!<CR>
 autocmd FileType terraform set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 autocmd FileType beancount set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 
+" go.nvim
+lua <<EOF
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+   require('go.format').goimports()
+  end,
+  group = format_sync_grp,
+})
+
+require('go').setup()
+EOF
+
 " GnuPG
 set noshelltemp
 nmap Ps :%!gpg --clearsign<CR>
@@ -132,6 +147,7 @@ lspconfig.tsserver.setup {}
 lspconfig.ansiblels.setup {}
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
+lspconfig.gopls.setup {}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
