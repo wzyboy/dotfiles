@@ -91,6 +91,7 @@ autocmd FileType html imap <F3> <!doctype html><CR>
 autocmd FileType sh imap <F3> #!/bin/bash -<CR><CR>
 autocmd FileType python imap <F3> #!/usr/bin/env python<CR><CR>
 autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
+autocmd FileType go set shiftwidth=0
 autocmd FileType csv nmap <C-k> :WhatColumn!<CR>
 autocmd FileType terraform set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 autocmd FileType beancount set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
