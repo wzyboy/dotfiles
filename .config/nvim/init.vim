@@ -231,6 +231,9 @@ cmp.setup({
       end
     end,
   }),
+  -- Disable preselect behaviour (needed for go.nvim)
+  -- https://github.com/hrsh7th/nvim-cmp/blob/5260e5e8ecadaf13e6b82cf867a909f54e15fd07/doc/cmp.txt#L918-L929
+  preselect = cmp.PreselectMode.None,
   -- Groups of sources.
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
