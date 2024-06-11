@@ -47,6 +47,7 @@ set nofoldenable
 
 " Looks
 lua require('init_treesitter')
+lua require('init_neovide')
 set termguicolors
 colorscheme tokyonight-night
 set noshowmode
