@@ -11,4 +11,8 @@ fi
 curl --create-dirs -Lo $plug_path \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+if [[ "$MSYSTEM" == "MINGW64" ]]; then
+    cmd //c mklink //J $(cygpath -w ~/AppData/Local/nvim) $(cygpath -w ~/.config/nvim)
+fi
+
 nvim '+PlugInstall' '+qa!'
