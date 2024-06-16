@@ -195,19 +195,20 @@ bindsym $Super+m mode "resize"
 #
 #}
 
-#bar {
-#  position top
-#  status_command i3blocks
-#  colors {
-#    separator #666666
-#    background #22222288
-#    statusline #dddddd
-#    focused_workspace #0088CC44 #0088CC44 #ffffff
-#    active_workspace #33333344 #33333344 #ffffff
-#    inactive_workspace #33333344 #33333344 #ffffff
-#    urgent_workspace #2f343a #900000 #ffffff
-#  }
-#}
+bar {
+  position top
+  status_command i3blocks
+  tray_output primary
+  colors {
+    separator #666666
+    background #22222288
+    statusline #dddddd
+    focused_workspace #0088CC44 #0088CC44 #ffffff
+    active_workspace #33333344 #33333344 #ffffff
+    inactive_workspace #33333344 #33333344 #ffffff
+    urgent_workspace #2f343a #900000 #ffffff
+  }
+}
 
 
 #gaps inner 5
@@ -246,7 +247,7 @@ assign [class="Gimp"] gimp
 
 # Autostarts
 exec_always --no-startup-id picom
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+#exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id thunar --daemon
 exec --no-startup-id xss-lock -- lock
 exec dex -a
