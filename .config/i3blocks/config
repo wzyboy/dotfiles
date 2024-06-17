@@ -27,10 +27,10 @@
 command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME
 separator_block_width=15
 
-[xtitle]
-command=xtitle
-interval=1
-color=#00FFFF
+#[xtitle]
+#command=xtitle
+#interval=1
+#color=#00FFFF
 
 # Volume indicator
 #
@@ -89,10 +89,11 @@ label=📶
 interval=1
 separator=false
 
-#[bandwidth]
-#command=/usr/lib/i3blocks/$BLOCK_NAME/$BLOCK_NAME -i "⬇️ " -o "⬆️ "
-#interval=1
-#min_width=⬇️  1000K ⬆️  1000K
+[bandwidth]
+command=/home/wzyboy/.config/i3blocks/blocks/bandwidth2/bandwidth2
+interval=persist
+markup=pango
+LABEL=
 
 # CPU usage
 #
@@ -126,20 +127,8 @@ interval=1
 
 # Battery indicator
 #
-# The battery instance defaults to 0.
-[battery]
-#label=BAT
-command=/home/wzyboy/.config/i3blocks/blocks/$BLOCK_NAME
-label=🔋 
-instance=0
-interval=30
-separator=false
-
-[battery]
-#label=BAT
-command=/home/wzyboy/.config/i3blocks/blocks/$BLOCK_NAME
-label=🔋 
-instance=1
+[battery2]
+markup=pango
 interval=30
 
 # Date Time
