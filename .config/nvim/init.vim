@@ -44,6 +44,7 @@ set nohls noincsearch
 set completeopt=menuone
 set rnu signcolumn=yes
 set nofoldenable
+set ff=unix
 
 " Looks
 lua require('init_treesitter')
