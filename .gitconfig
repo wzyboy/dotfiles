@@ -1,6 +1,5 @@
 # vim: ft=gitconfig:
 [user]
-	name = Zhuoyun Wei
 	useConfigOnly = true
 [core]
 	editor = nvim
