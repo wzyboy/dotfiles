@@ -70,12 +70,17 @@ export PYTHONUNBUFFERED=True
 export PYTHONDONTWRITEBYTECODE=True
 export PIP_DISABLE_PIP_VERSION_CHECK=1
 
+# go
+export GOPATH=$HOME/go
+path_insert ${GOPATH}/bin
+
 # misc
 export PAGER=less
 export EDITOR=nvim
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
+try_source /usr/share/bash-completion/bash_completion  # Ubuntu compat
 
 # local
 try_source ~/.bashrc.local
