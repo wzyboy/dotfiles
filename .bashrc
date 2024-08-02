@@ -80,6 +80,7 @@ export EDITOR=nvim
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
+export GPG_TTY=$(tty)
 try_source /usr/share/bash-completion/bash_completion  # Ubuntu compat
 
 # local
