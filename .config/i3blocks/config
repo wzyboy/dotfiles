@@ -79,15 +79,15 @@ separator=false
 
 [ssid]
 label=📡 
-command=iwgetid -r
+command=iw wlan0 info | grep -Po 'ssid .+' | cut -d' ' -f2
 interval=1
 separator=false
 
-[wifi]
+#[wifi]
 #instance=wlp3s0
-label=📶 
-interval=1
-separator=false
+#label=📶 
+#interval=1
+#separator=false
 
 [bandwidth]
 command=/home/wzyboy/.config/i3blocks/blocks/bandwidth2/bandwidth2
@@ -127,9 +127,9 @@ interval=1
 
 # Battery indicator
 #
-[battery2]
-markup=pango
-interval=30
+#[battery2]
+#markup=pango
+#interval=30
 
 # Date Time
 #
