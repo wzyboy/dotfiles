@@ -235,7 +235,7 @@ exec --no-startup-id xss-lock -- lock
 exec dex -a -e i3
 exec dex /etc/xdg/autostart/xfsettingsd.desktop
 exec dex /etc/xdg/autostart/xfce4-power-manager.desktop
-exec dec /etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
+exec dex /etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
 
 
 # nops
