@@ -62,8 +62,8 @@ bindsym $Super+Escape exec --no-startup-id pidgin
 bindsym Control+Mod1+l exec --no-startup-id xset s activate
 bindsym Control+Mod1+Delete exec --no-startup-id systemctl suspend
 bindsym Print exec --no-startup-id flameshot full -p ~/Desktop/ -c
-#bindsym $Super+Print exec --no-startup-id xfce4-screenshooter -w
 bindsym Control+Print exec --no-startup-id flameshot gui
+bindsym Control+Mod1+f exec --no-startup-id xfce4-clipman-history
 
 bindsym Control+$Super+1 exec --no-startup-id "~/.screenlayout/normal.sh"
 bindsym Control+$Super+2 exec --no-startup-id "~/.screenlayout/external-only.sh"
@@ -253,6 +253,7 @@ exec --no-startup-id xss-lock -- lock
 exec dex -a -e i3
 exec dex /etc/xdg/autostart/xfsettingsd.desktop
 exec dex /etc/xdg/autostart/xfce4-power-manager.desktop
+exec dec /etc/xdg/autostart/xfce4-clipman-plugin-autostart.desktop
 
 
 # nops
