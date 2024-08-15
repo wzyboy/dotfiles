@@ -250,7 +250,9 @@ exec_always --no-startup-id picom
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id thunar --daemon
 exec --no-startup-id xss-lock -- lock
-exec dex -a
+exec dex -a -e i3
+exec dex /etc/xdg/autostart/xfsettingsd.desktop
+exec dex /etc/xdg/autostart/xfce4-power-manager.desktop
 
 
 # nops
