@@ -7,6 +7,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
+Plug 'tpope/vim-fugitive'
 " completion
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
