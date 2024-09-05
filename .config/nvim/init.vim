@@ -8,6 +8,8 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'jamessan/vim-gnupg'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 " completion
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
