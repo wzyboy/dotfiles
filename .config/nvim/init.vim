@@ -64,6 +64,7 @@ nmap gx :tabclose<CR>
 nmap F :Ag<CR>
 nmap <C-f> :Files<CR>
 nmap gs :%s/
+nnoremap <C-g> :echo expand('%:p')<CR>
 
 " Filetypes
 autocmd BufNewFile,BufRead /tmp/mutt-* set filetype=mail
