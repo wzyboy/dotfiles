@@ -77,6 +77,7 @@ autocmd BufNewFile,BufRead *.lr set filetype=markdown
 autocmd BufNewFile,BufRead *.sentinel set filetype=terraform
 autocmd BufNewFile,BufRead *.tfvars set filetype=terraform
 autocmd BufNewFile,BufRead *.nomad set filetype=hcl
+autocmd BufNewFile,BufRead *.sls set filetype=yaml
 autocmd FileType text set textwidth=78
 autocmd FileType mail set textwidth=72
 autocmd FileType gitcommit set textwidth=72
@@ -86,6 +87,7 @@ autocmd FileType python imap <F3> #!/usr/bin/env python<CR><CR>
 autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
 autocmd FileType go set shiftwidth=0
 autocmd FileType csv nmap <C-k> :WhatColumn!<CR>
+autocmd FileType hcl set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 autocmd FileType terraform set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 autocmd FileType beancount set foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 
