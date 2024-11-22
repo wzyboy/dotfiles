@@ -23,7 +23,7 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.terraformls.setup {}
 lspconfig.tflint.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.ts_ls.setup {}
 lspconfig.ansiblels.setup {}
 lspconfig.html.setup {}
 lspconfig.cssls.setup {}
