@@ -61,12 +61,12 @@ set noshowmode
 let g:lightline = {'colorscheme': 'tokyonight'}
 
 " Key mapping
-vmap D dO[...]<Esc>
-nmap T :tabnew<CR>
-nmap gx :tabclose<CR>
-nmap F <cmd>lua require('fzf-lua').grep()<CR><CR>
-nmap <C-f> <cmd>lua require('fzf-lua').files()<CR>
-nmap gs :%s/
+vnoremap D dO[...]<Esc>
+nnoremap T :tabnew<CR>
+nnoremap gx :tabclose<CR>
+nnoremap F <cmd>lua require('fzf-lua').grep()<CR><CR>
+nnoremap <C-f> <cmd>lua require('fzf-lua').files()<CR>
+nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 
 " Filetypes
@@ -84,19 +84,19 @@ autocmd BufNewFile,BufRead *.sls set filetype=yaml
 autocmd FileType text set textwidth=78
 autocmd FileType mail set textwidth=72
 autocmd FileType gitcommit set textwidth=72
-autocmd FileType html imap <F3> <!doctype html><CR>
-autocmd FileType sh imap <F3> #!/bin/bash -<CR><CR>
-autocmd FileType python imap <F3> #!/usr/bin/env python<CR><CR>
+autocmd FileType html inoremap <F3> <!doctype html><CR>
+autocmd FileType sh inoremap <F3> #!/bin/bash -<CR><CR>
+autocmd FileType python inoremap <F3> #!/usr/bin/env python<CR><CR>
 autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
 autocmd FileType go set shiftwidth=0
-autocmd FileType csv nmap <C-k> :WhatColumn!<CR>
+autocmd FileType csv nnoremap <C-k> :WhatColumn!<CR>
 
 " GnuPG
 set noshelltemp
-nmap Ps :%!gpg --clearsign<CR>
-nmap Pe :%!gpg -er 
-nmap Pb :%!gpg -ser 
-nmap Pd :%!gpg -d<CR>
+nnoremap Ps :%!gpg --clearsign<CR>
+nnoremap Pe :%!gpg -er 
+nnoremap Pb :%!gpg -ser 
+nnoremap Pd :%!gpg -d<CR>
 
 " LSP and CMP
 lua require('init_lsp')
