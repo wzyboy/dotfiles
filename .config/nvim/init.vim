@@ -5,7 +5,8 @@ Plug 'folke/tokyonight.nvim'
 Plug 'itchyny/lightline.vim'
 " utilities
 Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
+Plug 'nvim-tree/nvim-web-devicons'
 Plug 'jamessan/vim-gnupg'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
@@ -63,8 +64,8 @@ let g:lightline = {'colorscheme': 'tokyonight'}
 vmap D dO[...]<Esc>
 nmap T :tabnew<CR>
 nmap gx :tabclose<CR>
-nmap F :Ag<CR>
-nmap <C-f> :Files<CR>
+nmap F <cmd>lua require('fzf-lua').grep()<CR><CR>
+nmap <C-f> <cmd>lua require('fzf-lua').files()<CR>
 nmap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 
