@@ -4,7 +4,7 @@
 [core]
 	editor = nvim
 	quotePath = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 [init]
 	defaultBranch = master
 [commit]
@@ -27,9 +27,11 @@
 [color]
 	ui = auto
 [interactive]
-	diffFilter = diff-so-fancy --patch
-[diff-so-fancy]
-	stripLeadingSymbols = false
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	hyperlinks = true
+	line-numbers = true
 [diff "json"]
 	textconv = python -m json.tool
 [filter "lfs"]
