@@ -29,9 +29,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
-	navigate = true
-	hyperlinks = true
-	line-numbers = true
+	keep-plus-minus-markers = true
 [diff "json"]
 	textconv = python -m json.tool
 [filter "lfs"]
