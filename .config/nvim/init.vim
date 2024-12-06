@@ -62,7 +62,7 @@ let g:lightline = {'colorscheme': 'tokyonight'}
 vnoremap D dO[...]<Esc>
 nnoremap T :tabnew<CR>
 nnoremap gx :tabclose<CR>
-nnoremap F <cmd>lua require('fzf-lua').grep()<CR>
+nnoremap F <cmd>lua require('fzf-lua').grep_project()<CR>
 nnoremap <C-f> <cmd>lua require('fzf-lua').files()<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
