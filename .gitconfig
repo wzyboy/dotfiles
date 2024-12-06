@@ -30,6 +30,7 @@
 	diffFilter = delta --color-only
 [delta]
 	keep-plus-minus-markers = true
+	file-decoration-style = "white bold ul"
 [diff "json"]
 	textconv = python -m json.tool
 [filter "lfs"]
