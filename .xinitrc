@@ -27,7 +27,7 @@ export XDG_CURRENT_DESKTOP="XFCE"
 # exec startkde
 # exec startxfce4
 #exec startdwm
-#dbus-launch i3
-exec i3
+dbus-launch i3
+#exec i3
 killall xss-lock
 # ...or the Window Manager of your choice
