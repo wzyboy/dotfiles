@@ -1,0 +1,12 @@
+line-length = 120
+
+[lint]
+# https://docs.astral.sh/ruff/rules/
+select = ['F', 'E', 'W', 'UP',]
+ignore = [
+  'E265', # no-space-after-block-comment
+  'E501', # line-too-long
+]
+
+[format]
+quote-style = 'single'

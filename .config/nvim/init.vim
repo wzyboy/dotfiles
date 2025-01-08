@@ -112,7 +112,7 @@ let g:ale_echo_msg_format = '[%linter%] %s'
 " format that already has lspconfig set up (see init_lsp.lua), explicitly
 " define the list of enabled linters in ALE, to avoid duplicate diagnostics.
 let g:ale_linters = {
-\  'python': ['flake8'],
+\  'python': ['ruff'],
 \  'terraform': [],
 \  'javascript': ['eslint'],
 \  'yaml': ['yamllint'],
@@ -122,6 +122,7 @@ let g:ale_linters = {
 \  'go': [],
 \}
 let g:ale_fixers = {
+\  'python': ['ruff'],
 \  'markdown': ['trim_whitespace', 'remove_trailing_lines'],
 \  'terraform': ['terraform', 'trim_whitespace', 'remove_trailing_lines'],
 \  'hcl': ['packer'],
