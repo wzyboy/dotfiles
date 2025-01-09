@@ -28,10 +28,11 @@ Plug 'crispgm/cmp-beancount'
 " file types
 Plug 'OXY2DEV/markview.nvim',           { 'for': 'markdown' }
 Plug 'chrisbra/csv.vim',
-Plug 'Glench/Vim-Jinja2-Syntax',        { 'for': 'jinja.html' }
+Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'ray-x/go.nvim'
+Plug 'vmware-archive/salt-vim',         { 'for': 'sls' }
 call plug#end()
 
 " Basics
@@ -69,6 +70,7 @@ nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 
 " Filetypes
+let g:sls_use_jinja_syntax = 0
 autocmd BufNewFile,BufRead /tmp/mutt-* set filetype=mail
 autocmd BufNewFile,BufRead *.mail set filetype=mail
 autocmd BufNewFile,BufRead /tmp/mail-* set filetype=mail
@@ -81,7 +83,6 @@ autocmd BufNewFile,BufRead *.tfvars set filetype=terraform
 autocmd BufNewFile,BufRead *.tfstate set filetype=json
 autocmd BufNewFile,BufRead *.tfstate.backup set filetype=json
 autocmd BufNewFile,BufRead *.nomad set filetype=hcl
-autocmd BufNewFile,BufRead *.sls set filetype=yaml
 autocmd FileType text set textwidth=78
 autocmd FileType mail set textwidth=72
 autocmd FileType gitcommit set textwidth=72
