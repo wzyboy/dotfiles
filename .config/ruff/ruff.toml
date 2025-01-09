@@ -8,5 +8,9 @@ ignore = [
   'E501', # line-too-long
 ]
 
+[lint.isort]
+length-sort = true
+force-single-line = true
+
 [format]
 quote-style = 'single'
