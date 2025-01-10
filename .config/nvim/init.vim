@@ -11,6 +11,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'nvim-tree/nvim-tree.lua'
 " completion
 Plug 'mattn/emmet-vim'
 Plug 'dense-analysis/ale'
@@ -60,6 +61,9 @@ colorscheme tokyonight-night
 set noshowmode
 let g:lightline = {'colorscheme': 'tokyonight'}
 
+" Lua utilities
+lua require('nvim-tree').setup()
+
 " Key mapping
 vnoremap D dO[...]<Esc>
 nnoremap T :tabnew<CR>
@@ -68,6 +72,7 @@ nnoremap F <cmd>lua require('fzf-lua').grep_project({resume=true})<CR>
 nnoremap <C-f> <cmd>lua require('fzf-lua').files({resume=true})<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
+nnoremap <C-m> :NvimTreeToggle<CR>
 
 " Filetypes
 let g:sls_use_jinja_syntax = 0
