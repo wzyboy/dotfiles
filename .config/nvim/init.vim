@@ -27,7 +27,6 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'crispgm/cmp-beancount'
 " file types
-Plug 'OXY2DEV/markview.nvim',           { 'for': 'markdown' }
 Plug 'chrisbra/csv.vim',
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
