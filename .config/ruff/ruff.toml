@@ -6,6 +6,10 @@ select = ['F', 'E', 'W', 'UP',]
 ignore = [
   'E265', # no-space-after-block-comment
   'E501', # line-too-long
+
+  # This rule does not recognize type hints.
+  # Pyright does the same job, but better.
+  'F821', # name-not-defined
 ]
 
 [lint.isort]
