@@ -9,7 +9,8 @@ ignore = [
 
   # This rule does not recognize type hints.
   # Pyright does the same job, but better.
-  'F821', # name-not-defined
+  # https://github.com/astral-sh/ruff/issues/15482
+  'F821', # undefined-name
 ]
 
 [lint.isort]
