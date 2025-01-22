@@ -71,7 +71,7 @@ nnoremap F <cmd>lua require('fzf-lua').grep_project({resume=true})<CR>
 nnoremap <C-f> <cmd>lua require('fzf-lua').files({resume=true})<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
-nnoremap <C-m> :NvimTreeToggle<CR>
+nnoremap <Tab> :NvimTreeToggle<CR>
 
 " Filetypes
 let g:sls_use_jinja_syntax = 0
