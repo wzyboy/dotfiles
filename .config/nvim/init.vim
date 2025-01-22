@@ -87,15 +87,15 @@ autocmd BufNewFile,BufRead *.tfvars set filetype=terraform
 autocmd BufNewFile,BufRead *.tfstate set filetype=json
 autocmd BufNewFile,BufRead *.tfstate.backup set filetype=json
 autocmd BufNewFile,BufRead *.nomad set filetype=hcl
-autocmd FileType text set textwidth=78
-autocmd FileType mail set textwidth=72
-autocmd FileType gitcommit set textwidth=72
-autocmd FileType html inoremap <F3> <!doctype html><CR>
-autocmd FileType sh inoremap <F3> #!/bin/bash -<CR><CR>
-autocmd FileType python inoremap <F3> #!/usr/bin/env python<CR><CR>
-autocmd FileType python set softtabstop=4 expandtab shiftwidth=4
-autocmd FileType go set shiftwidth=0
-autocmd FileType csv nnoremap <C-k> :WhatColumn!<CR>
+autocmd FileType text setlocal textwidth=78
+autocmd FileType mail setlocal textwidth=72
+autocmd FileType gitcommit setlocal textwidth=72
+autocmd FileType html inoremap <buffer> <F3> <!doctype html><CR>
+autocmd FileType sh inoremap <buffer> <F3> #!/bin/bash -<CR><CR>
+autocmd FileType python inoremap <buffer> <F3> #!/usr/bin/env python<CR><CR>
+autocmd FileType python setlocal softtabstop=4 expandtab shiftwidth=4
+autocmd FileType go setlocal shiftwidth=0
+autocmd FileType csv nnoremap <buffer> <C-k> :WhatColumn!<CR>
 autocmd FileType * setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
 
 " GnuPG
