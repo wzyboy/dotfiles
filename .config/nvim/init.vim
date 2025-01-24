@@ -87,6 +87,7 @@ autocmd BufNewFile,BufRead *.tfvars set filetype=terraform
 autocmd BufNewFile,BufRead *.tfstate set filetype=json
 autocmd BufNewFile,BufRead *.tfstate.backup set filetype=json
 autocmd BufNewFile,BufRead *.nomad set filetype=hcl
+autocmd BufNewFile,BufRead uv.lock set filetype=toml
 autocmd FileType text setlocal textwidth=78
 autocmd FileType mail setlocal textwidth=72
 autocmd FileType gitcommit setlocal textwidth=72
