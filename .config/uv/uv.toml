@@ -1,0 +1,5 @@
+# By default, uv prefers managed-download > system > managed-not-downloaded,
+# this makes `uv venv` behaves differently depending on whether any python is available locally.
+# Also, uv's python is linked against libedit while Linux's is linked against GNU readline.
+# https://docs.astral.sh/uv/reference/settings/#python-preference
+python-preference = "system"
