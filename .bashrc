@@ -36,8 +36,14 @@ else
   alias l='ls -lF --time-style=long-iso'
   alias ll='ls -alF --time-style=long-iso'
 fi
-alias vim='nvim -p'
-alias vimdiff='nvim -d'
+if [[ -x $(command -v nvim) ]]; then
+  export EDITOR=nvim
+  alias vim='nvim -p'
+  alias vimdiff='nvim -d'
+else
+  export EDITOR=vim
+  alias vim='vim -p'
+fi
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias zgrep='zgrep --color=auto'
@@ -76,7 +82,6 @@ path_insert ${GOPATH}/bin
 
 # misc
 export PAGER=less
-export EDITOR=nvim
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
