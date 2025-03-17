@@ -52,6 +52,10 @@ set rnu signcolumn=yes
 set nofoldenable
 set ffs=unix,dos
 
+if has('unix')
+    let g:python3_host_prog = '/usr/bin/python3'
+endif
+
 " Looks
 lua require('init_treesitter')
 lua require('init_neovide')
