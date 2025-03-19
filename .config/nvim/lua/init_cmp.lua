@@ -49,7 +49,7 @@ cmp.setup({
     --{ name = 'omni' },
     {
       name = 'beancount',
-      option = { account = '~/git/Ledger/wzyboy.bean' },
+      option = { account = vim.fn.expand('$BEANCOUNT_ROOT') },
     },
     { name = 'buffer' },
     { name = 'path' },
