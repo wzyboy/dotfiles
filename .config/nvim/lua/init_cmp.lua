@@ -49,7 +49,7 @@ cmp.setup({
     --{ name = 'omni' },
     {
       name = 'beancount',
-      option = { account = '~/Documents/Ledger/wzyboy.bean' },
+      option = { account = '~/git/Ledger/wzyboy.bean' },
     },
     { name = 'buffer' },
     { name = 'path' },
