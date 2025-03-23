@@ -75,6 +75,14 @@ PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_ps1) '
 export PYTHONUNBUFFERED=True
 export PYTHONDONTWRITEBYTECODE=True
 export PIP_DISABLE_PIP_VERSION_CHECK=1
+venv() {
+    VENV_DIR="${1:-.venv}"
+    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" || "$OSTYPE" == "win32" ]]; then
+        source "$VENV_DIR/Scripts/activate"
+    else
+        source "$VENV_DIR/bin/activate"
+    fi
+}
 
 # go
 export GOPATH=$HOME/go
