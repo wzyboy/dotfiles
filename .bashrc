@@ -90,6 +90,7 @@ path_insert ${GOPATH}/bin
 
 # misc
 export PAGER=less
+export LESS="-R"
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
