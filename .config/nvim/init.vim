@@ -76,6 +76,10 @@ nnoremap <C-f> <cmd>lua require('fzf-lua').files({resume=true})<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 nnoremap <Tab> :NvimTreeFindFileToggle<CR>
+" Map g1 to g9 to go to tab 1 through 9
+for i in range(1, 9)
+  execute 'nnoremap g' . i . ' ' . i . 'gt'
+endfor
 
 " Filetypes
 let g:sls_use_jinja_syntax = 0
