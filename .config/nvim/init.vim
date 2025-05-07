@@ -146,6 +146,6 @@ let g:ale_fixers = {
 " Beancount
 autocmd FileType beancount let b:beancount_root = expand('$BEANCOUNT_ROOT')
 autocmd FileType beancount inoremap <buffer> . .<C-\><C-O>:AlignCommodity<CR>
-autocmd FileType beancount nnoremap <C-p> :execute ":!bean-doctor context % " . line('.')<CR>
+autocmd FileType beancount nnoremap <C-p> :execute ":!bean-doctor context $BEANCOUNT_ROOT %:" . line('.')<CR>
 autocmd FileType beancount vnoremap L :!bean-format<CR>
 autocmd FileType beancount vnoremap S :!bean-split<CR>
