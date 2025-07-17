@@ -10,3 +10,6 @@
 [submodule ".local/git-fire"]
 	path = .local/git-fire
 	url = https://github.com/qw3rtman/git-fire.git
+[submodule ".local/tpm"]
+	path = .local/tpm
+	url = https://github.com/tmux-plugins/tpm.git
