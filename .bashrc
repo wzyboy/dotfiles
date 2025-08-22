@@ -102,18 +102,28 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_ps1) '
+function auto_commit() {
+  local interval=${1:-300}
+  while true; do
+    if [[ -n "$(git status --porcelain)" ]]; then
+      git add -A
+      git commit -m "auto-save"
+    fi
+    sleep "$interval"
+  done
+}
 
 # python
 export PYTHONUNBUFFERED=True
 export PYTHONDONTWRITEBYTECODE=True
 export PIP_DISABLE_PIP_VERSION_CHECK=1
-venv() {
-    VENV_DIR="${1:-.venv}"
-    if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" || "$OSTYPE" == "win32" ]]; then
-        source "$VENV_DIR/Scripts/activate"
-    else
-        source "$VENV_DIR/bin/activate"
-    fi
+function venv() {
+  VENV_DIR="${1:-.venv}"
+  if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "cygwin" || "$OSTYPE" == "win32" ]]; then
+    source "$VENV_DIR/Scripts/activate"
+  else
+    source "$VENV_DIR/bin/activate"
+  fi
 }
 
 # go
@@ -121,7 +131,6 @@ export GOPATH=$HOME/go
 path_insert ${GOPATH}/bin
 
 # misc
-#export PAGER=less
 export LESS="-R"
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
