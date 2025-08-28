@@ -66,6 +66,7 @@ let g:lightline = {'colorscheme': 'tokyonight'}
 
 " Lua utilities
 lua require('nvim-tree').setup()
+lua require('init_fzf')
 
 " Key mapping
 vnoremap D dO[...]<Esc>
