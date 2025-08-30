@@ -1,6 +1,15 @@
 local wezterm = require 'wezterm'
 local act = wezterm.action
 
+local copy_mode = nil
+if wezterm.gui then
+    copy_mode = wezterm.gui.default_key_tables().copy_mode
+    table.insert(
+        copy_mode,
+        { key = 'Enter', mods = 'NONE', action = act.Multiple{ { CopyTo =  'ClipboardAndPrimarySelection' }, { CopyMode =  'Close' } } }
+    )
+end
+
 local config = {
     audible_bell = 'Disabled',
     check_for_updates = false,
@@ -25,6 +34,7 @@ local config = {
         { key = 'c', mods = 'LEADER', action = act.SpawnCommandInNewTab{ cwd =  wezterm.home_dir } },
         { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane{ confirm = true } },
         { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
+        { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
 
         { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
         { key = 'j', mods = 'LEADER', action = act.ActivatePaneDirection 'Down' },
@@ -53,6 +63,9 @@ local config = {
         { key = '=', mods = 'CTRL', action = act.IncreaseFontSize },
         { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
         { key = '0', mods = 'CTRL', action = act.ResetFontSize },
+    },
+    key_tables = {
+        copy_mode = copy_mode,
     },
     set_environment_variables = {},
 }
