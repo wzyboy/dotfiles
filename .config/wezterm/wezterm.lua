@@ -1,9 +1,5 @@
 local wezterm = require("wezterm")
-
-local function file_exists(path)
-    local f = io.open(path, "r")
-    if f~=nil then io.close(f) return true else return false end
-end
+local act = wezterm.action
 
 local config = {
     audible_bell = "Disabled",
@@ -24,38 +20,39 @@ local config = {
     leader = { key = "b", mods = "CTRL" },
     disable_default_key_bindings = true,
     keys = {
-        { key = "-", mods = "LEADER",       action=wezterm.action{SplitVertical={domain="CurrentPaneDomain"}}},
-        { key = "|", mods = "LEADER|SHIFT", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
-        { key = "z", mods = "LEADER",       action="TogglePaneZoomState" },
-        { key = "c", mods = "LEADER",       action=wezterm.action{SpawnCommandInNewTab={cwd=wezterm.home_dir}}},
-        { key = "h", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Left"}},
-        { key = "j", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Down"}},
-        { key = "k", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Up"}},
-        { key = "l", mods = "LEADER",       action=wezterm.action{ActivatePaneDirection="Right"}},
-        { key = "H", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Left", 5}}},
-        { key = "J", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Down", 5}}},
-        { key = "K", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Up", 5}}},
-        { key = "L", mods = "LEADER|SHIFT", action=wezterm.action{AdjustPaneSize={"Right", 5}}},
-        { key = "1", mods = "LEADER",       action=wezterm.action{ActivateTab=0}},
-        { key = "2", mods = "LEADER",       action=wezterm.action{ActivateTab=1}},
-        { key = "3", mods = "LEADER",       action=wezterm.action{ActivateTab=2}},
-        { key = "4", mods = "LEADER",       action=wezterm.action{ActivateTab=3}},
-        { key = "5", mods = "LEADER",       action=wezterm.action{ActivateTab=4}},
-        { key = "6", mods = "LEADER",       action=wezterm.action{ActivateTab=5}},
-        { key = "7", mods = "LEADER",       action=wezterm.action{ActivateTab=6}},
-        { key = "8", mods = "LEADER",       action=wezterm.action{ActivateTab=7}},
-        { key = "9", mods = "LEADER",       action=wezterm.action{ActivateTab=8}},
-        { key = "n", mods = "LEADER",       action=wezterm.action{ActivateTabRelative=1}},
-        { key = "p", mods = "LEADER",       action=wezterm.action{ActivateTabRelative=-1}},
-        { key = "&", mods = "LEADER|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=true}}},
-        { key = "x", mods = "LEADER",       action=wezterm.action{CloseCurrentPane={confirm=true}}},
+        { key = '-', mods = 'LEADER', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
+        { key = '|', mods = 'SHIFT|LEADER', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+        { key = 'c', mods = 'LEADER', action = act.SpawnCommandInNewTab{ cwd =  wezterm.home_dir } },
+        { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane{ confirm = true } },
+        { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
 
-        { key = "n", mods = "SHIFT|CTRL",   action="ToggleFullScreen" },
-        { key = "v", mods = "SHIFT|CTRL",   action=wezterm.action.PasteFrom 'Clipboard'},
-        { key = "c", mods = "SHIFT|CTRL",   action=wezterm.action.CopyTo 'Clipboard'},
-        { key = "+", mods = "SHIFT|CTRL",   action="IncreaseFontSize" },
-        { key = "-", mods = "SHIFT|CTRL",   action="DecreaseFontSize" },
-        { key = "0", mods = "SHIFT|CTRL",   action="ResetFontSize" },
+        { key = 'h', mods = 'LEADER', action = act.ActivatePaneDirection 'Left' },
+        { key = 'j', mods = 'LEADER', action = act.ActivatePaneDirection 'Down' },
+        { key = 'k', mods = 'LEADER', action = act.ActivatePaneDirection 'Up' },
+        { key = 'l', mods = 'LEADER', action = act.ActivatePaneDirection 'Right' },
+        { key = 'H', mods = 'LEADER', action = act.AdjustPaneSize{ 'Left', 5 } },
+        { key = 'J', mods = 'LEADER', action = act.AdjustPaneSize{ 'Down', 5 } },
+        { key = 'K', mods = 'LEADER', action = act.AdjustPaneSize{ 'Up', 5 } },
+        { key = 'L', mods = 'LEADER', action = act.AdjustPaneSize{ 'Right', 5 } },
+
+        { key = '1', mods = 'LEADER', action = act.ActivateTab(0) },
+        { key = '2', mods = 'LEADER', action = act.ActivateTab(1) },
+        { key = '3', mods = 'LEADER', action = act.ActivateTab(2) },
+        { key = '4', mods = 'LEADER', action = act.ActivateTab(3) },
+        { key = '5', mods = 'LEADER', action = act.ActivateTab(4) },
+        { key = '6', mods = 'LEADER', action = act.ActivateTab(5) },
+        { key = '7', mods = 'LEADER', action = act.ActivateTab(6) },
+        { key = '8', mods = 'LEADER', action = act.ActivateTab(7) },
+        { key = '9', mods = 'LEADER', action = act.ActivateTab(8) },
+        { key = 'n', mods = 'LEADER', action = act.ActivateTabRelative(1) },
+        { key = 'p', mods = 'LEADER', action = act.ActivateTabRelative(-1) },
+
+        { key = 'C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
+        { key = 'V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
+        { key = 'N', mods = 'CTRL', action = act.ToggleFullScreen },
+        { key = '+', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },
+        { key = '-', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
+        { key = '0', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
     },
     set_environment_variables = {},
 }
