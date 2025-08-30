@@ -6,7 +6,7 @@ if wezterm.gui then
     copy_mode = wezterm.gui.default_key_tables().copy_mode
     table.insert(
         copy_mode,
-        { key = 'Enter', mods = 'NONE', action = act.Multiple{ { CopyTo =  'ClipboardAndPrimarySelection' }, { CopyMode =  'Close' } } }
+        { key = 'Enter', mods = 'NONE', action = act.Multiple{ { CopyTo = 'ClipboardAndPrimarySelection' }, { CopyMode = 'Close' } } }
     )
 end
 
@@ -31,7 +31,7 @@ local config = {
     keys = {
         { key = '-', mods = 'LEADER', action = act.SplitVertical },
         { key = '|', mods = 'SHIFT|LEADER', action = act.SplitHorizontal },
-        { key = 'c', mods = 'LEADER', action = act.SpawnCommandInNewTab{ cwd =  wezterm.home_dir } },
+        { key = 'c', mods = 'LEADER', action = act.SpawnCommandInNewTab{ cwd = wezterm.home_dir } },
         { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane{ confirm = true } },
         { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
         { key = '[', mods = 'LEADER', action = act.ActivateCopyMode },
