@@ -1,10 +1,10 @@
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
 local act = wezterm.action
 
 local config = {
-    audible_bell = "Disabled",
+    audible_bell = 'Disabled',
     check_for_updates = false,
-    color_scheme = "Tokyo Night",
+    color_scheme = 'Tokyo Night',
     inactive_pane_hsb = {
         hue = 1.0,
         saturation = 1.0,
@@ -17,11 +17,11 @@ local config = {
     font = wezterm.font 'Iosevka Term',
     font_size = 12.0,
     launch_menu = {},
-    leader = { key = "b", mods = "CTRL" },
+    leader = { key = 'b', mods = 'CTRL' },
     disable_default_key_bindings = true,
     keys = {
-        { key = '-', mods = 'LEADER', action = act.SplitVertical{ domain =  'CurrentPaneDomain' } },
-        { key = '|', mods = 'SHIFT|LEADER', action = act.SplitHorizontal{ domain =  'CurrentPaneDomain' } },
+        { key = '-', mods = 'LEADER', action = act.SplitVertical },
+        { key = '|', mods = 'SHIFT|LEADER', action = act.SplitHorizontal },
         { key = 'c', mods = 'LEADER', action = act.SpawnCommandInNewTab{ cwd =  wezterm.home_dir } },
         { key = 'x', mods = 'LEADER', action = act.CloseCurrentPane{ confirm = true } },
         { key = 'z', mods = 'LEADER', action = act.TogglePaneZoomState },
@@ -50,20 +50,20 @@ local config = {
         { key = 'C', mods = 'CTRL', action = act.CopyTo 'Clipboard' },
         { key = 'V', mods = 'CTRL', action = act.PasteFrom 'Clipboard' },
         { key = 'N', mods = 'CTRL', action = act.ToggleFullScreen },
-        { key = '+', mods = 'SHIFT|CTRL', action = act.IncreaseFontSize },
-        { key = '-', mods = 'SHIFT|CTRL', action = act.DecreaseFontSize },
-        { key = '0', mods = 'SHIFT|CTRL', action = act.ResetFontSize },
+        { key = '=', mods = 'CTRL', action = act.IncreaseFontSize },
+        { key = '-', mods = 'CTRL', action = act.DecreaseFontSize },
+        { key = '0', mods = 'CTRL', action = act.ResetFontSize },
     },
     set_environment_variables = {},
 }
 
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-    local git_bash = "C:/Program Files/Git/bin/bash.exe"
-    config.default_prog = { git_bash, "-i" }
-    table.insert(config.launch_menu, { label = "Git Bash", args = { git_bash, "-i" } })
+if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
+    local git_bash = 'C:/Program Files/Git/bin/bash.exe'
+    config.default_prog = { git_bash, '-i' }
+    table.insert(config.launch_menu, { label = 'Git Bash', args = { git_bash, '-i' } })
 else
-    config.default_prog = { "/bin/bash", "-i" }
-    table.insert(config.launch_menu, { label = "bash", args = {"bash", "-i"} })
+    config.default_prog = { '/bin/bash', '-i' }
+    table.insert(config.launch_menu, { label = 'bash', args = { 'bash', '-i' } })
 end
 
 return config
