@@ -79,4 +79,55 @@ else
     table.insert(config.launch_menu, { label = 'bash', args = { 'bash', '-i' } })
 end
 
+wezterm.on('update-right-status', function(window, pane)
+  -- Each element holds the text for a cell in a "powerline" style << fade
+  local cells = {}
+
+  local date = wezterm.strftime '%Y-%m-%d  %H:%M'
+  table.insert(cells, date)
+
+  local hostname = wezterm.hostname()
+  table.insert(cells, hostname)
+
+  -- An entry for each battery (typically 0 or 1 battery)
+  for _, b in ipairs(wezterm.battery_info()) do
+    table.insert(cells, string.format('%.0f%%', b.state_of_charge * 100))
+  end
+
+  -- Color palette for the backgrounds of each cell
+  local colors = {
+    '#3c1361',
+    '#52307c',
+    '#663a82',
+    '#7c5295',
+    '#b491c8',
+  }
+
+  -- Foreground color for the text across the fade
+  local text_fg = '#c0c0c0'
+
+  -- The elements to be formatted
+  local elements = {}
+  -- How many cells have been formatted
+  local num_cells = 0
+
+  -- Translate a cell into elements
+  local function push(text)
+    local cell_no = num_cells + 1
+    table.insert(elements, { Foreground = { Color = colors[cell_no] } })
+    table.insert(elements, { Text = '' })
+    table.insert(elements, { Foreground = { Color = text_fg } })
+    table.insert(elements, { Background = { Color = colors[cell_no] } })
+    table.insert(elements, { Text = ' ' .. text .. ' ' })
+    num_cells = num_cells + 1
+  end
+
+  while #cells > 0 do
+    local cell = table.remove(cells, 1)
+    push(cell)
+  end
+
+  window:set_right_status(wezterm.format(elements))
+end)
+
 return config
