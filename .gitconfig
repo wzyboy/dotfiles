@@ -29,6 +29,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
+	navigate = true
 	keep-plus-minus-markers = true
 	file-decoration-style = "white bold ul"
 	minus-style                   = syntax "#37222c"
