@@ -1,6 +1,3 @@
-[submodule ".local/z"]
-	path = .local/z
-	url = https://github.com/rupa/z.git
 [submodule ".local/fzf-extras"]
 	path = .local/fzf-extras
 	url = https://github.com/atweiden/fzf-extras.git

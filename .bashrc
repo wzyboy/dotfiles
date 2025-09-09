@@ -51,8 +51,9 @@ alias pcregrep='pcregrep --color=auto'
 try_source ~/.bash_aliases
 
 # z
-export _Z_EXCLUDE_DIRS=(/run /nfs)
-try_source ~/.local/z/z.sh
+if [[ -x $(command -v zoxide) ]]; then
+  eval "$(zoxide init bash)"
+fi
 
 # fzf
 try_source ~/.fzf.bash
