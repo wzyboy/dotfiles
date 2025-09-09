@@ -55,6 +55,11 @@ if [[ -x $(command -v zoxide) ]]; then
   eval "$(zoxide init bash)"
 fi
 
+# direnv
+if [[ -x $(command -v direnv) ]]; then
+  eval "$(direnv hook bash)"
+fi
+
 # fzf
 try_source ~/.fzf.bash
 try_source ~/.local/fzf-extras/fzf-extras.sh
