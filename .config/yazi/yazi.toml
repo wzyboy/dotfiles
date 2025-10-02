@@ -62,6 +62,7 @@ du = [
 ]
 exif = [
 	{ run = 'exiftool "$1" | less', block = true, for = "unix" },
+	{ run = 'exiftool "%1" | nvim -', block = true, for = "windows" },
 	{ run = 'jhead "$1" | less',    block = true, for = "unix" },
 ]
 
