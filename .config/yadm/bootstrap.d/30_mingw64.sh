@@ -9,6 +9,7 @@ fi
 PAIRS=(
   "$HOME/.config/nvim|$HOME/AppData/Local/nvim"
   "$HOME/.config/yazi|$HOME/AppData/Roaming/yazi/config"
+  "$HOME/.config/ruff|$HOME/AppData/Roaming/ruff"
 )
 
 for pair in "${PAIRS[@]}"; do
