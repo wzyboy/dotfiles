@@ -9,4 +9,7 @@ yadm sparse-checkout set '/*' '!README.md'
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME"
 
+# curl needs this
+touch ~/.netrc
+
 yadm submodule update --init
