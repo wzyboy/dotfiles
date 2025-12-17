@@ -30,7 +30,7 @@ Plug 'crispgm/cmp-beancount'
 Plug 'chrisbra/csv.vim',
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': 'master', 'do': ':TSUpdate' }
 Plug 'ray-x/go.nvim'
 Plug 'vmware-archive/salt-vim',         { 'for': 'sls' }
 call plug#end()
