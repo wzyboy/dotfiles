@@ -137,6 +137,7 @@ let g:ale_linters = {
 \  'html': [],
 \  'css': [],
 \  'go': [],
+\  'lua': [],
 \}
 let g:ale_fixers = {
 \  'python': ['ruff'],
