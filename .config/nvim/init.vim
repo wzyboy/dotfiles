@@ -108,7 +108,7 @@ autocmd FileType python inoremap <buffer> <F3> #!/usr/bin/env python<CR><CR>
 autocmd FileType python setlocal softtabstop=4 expandtab shiftwidth=4
 autocmd FileType go setlocal shiftwidth=0
 autocmd FileType csv nnoremap <buffer> <C-k> :WhatColumn!<CR>
-autocmd FileType * setlocal foldmethod=expr foldexpr=nvim_treesitter#foldexpr()
+autocmd FileType * setlocal foldmethod=expr foldexpr=v:lua.vim.treesitter.foldexpr()
 
 " GnuPG
 set noshelltemp
