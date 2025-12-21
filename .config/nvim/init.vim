@@ -109,6 +109,7 @@ autocmd FileType python setlocal softtabstop=4 expandtab shiftwidth=4
 autocmd FileType go setlocal shiftwidth=0
 autocmd FileType csv nnoremap <buffer> <C-k> :WhatColumn!<CR>
 autocmd FileType * setlocal foldmethod=expr foldexpr=v:lua.vim.treesitter.foldexpr()
+command! -range -nargs=1 CutWrite <line1>,<line2>write <args> | <line1>,<line2>delete
 
 " GnuPG
 set noshelltemp

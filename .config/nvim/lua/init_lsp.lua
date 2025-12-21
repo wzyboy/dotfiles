@@ -20,6 +20,7 @@ require('lsp_signature').setup({
 
 -- Setup language servers.
 vim.lsp.enable('ty')
+-- vim.lsp.enable('pyright')
 vim.lsp.enable('terraformls')
 vim.lsp.enable('tflint')
 vim.lsp.enable('ts_ls')
