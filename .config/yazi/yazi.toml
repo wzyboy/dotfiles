@@ -36,7 +36,7 @@ edit = [
 ]
 play = [
 	{ run = "mpv --force-window %s", orphan = true, for = "unix" },
-	{ run = "mpv --vo=tct %s", block = true, for = "unix" },
+	{ run = "mpv --vo=tct %s", desc = "mpv (tct)", block = true, for = "unix" },
 	{ run = '"C:/Program Files/mpv.net/mpvnet.exe" %s', desc = "mpv.net", orphan = true, for = "windows" },
 	{ run = '"C:/Program Files/MediaInfo/MediaInfo.exe" %s', desc = "MediaInfo", orphan = true, for = "windows" },
 	{ run = 'mediainfo "%s" | less', block = true, for = "unix" },
