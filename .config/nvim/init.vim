@@ -74,6 +74,7 @@ nnoremap T :tabnew<CR>
 nnoremap gx :tabclose<CR>
 nnoremap F <cmd>lua require('fzf-lua').grep_project({resume=true})<CR>
 nnoremap <C-f> <cmd>lua require('fzf-lua').files({resume=true})<CR>
+nnoremap <M-f> <cmd>lua require('fzf-lua').grep({cwd=vim.fn.expand('%:p:h'), resume=true})<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 nnoremap <Tab> :NvimTreeFindFileToggle<CR>
