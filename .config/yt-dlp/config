@@ -9,4 +9,5 @@
 # Ensure 4k60fps AV1/VP9 as sometimes YouTube hides the format
 #-f 401/315+251
 
-#-o "%(release_timestamp>%Y-%m-%d_%H-%M-%S)s - %(title)s [%(id)s].%(ext)s"
+# Prepend UTC datetime in filename
+-o "%(release_timestamp>%Y-%m-%d_%H-%M-%S)s - %(title)s [%(id)s].%(ext)s"
