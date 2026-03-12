@@ -1,7 +1,10 @@
 # vim: ft=bash:
 
 --write-info-json
+--no-clean-info-json
 --write-thumbnail
+
+--mtime
 
 # Ensure 4k60fps AV1/VP9 as sometimes YouTube hides the format
 #-f 401/315+251
