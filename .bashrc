@@ -138,6 +138,7 @@ case "$OSTYPE" in
   msys*|cygwin*|win32*)
     if [[ -x $(command -v git-wt) ]]; then
       eval "$(git-wt config shell init bash)"
+      alias wt=git-wt
     fi
     ;;
   *)
