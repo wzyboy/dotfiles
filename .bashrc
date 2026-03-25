@@ -27,7 +27,7 @@ path_insert() {
 path_insert ${HOME}/bin
 path_insert ${HOME}/.local/bin
 
-# aliases
+# core utils
 alias ls='ls --color=auto -N'
 if [[ -x $(command -v eza) ]]; then
   alias l='eza -lbg --time-style=long-iso'
@@ -48,6 +48,7 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias pcregrep='pcregrep --color=auto'
+alias df='df -xtmpfs -xdevtmpfs -x efivarfs -l'
 try_source ~/.bash_aliases
 
 # z
@@ -108,6 +109,22 @@ export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="auto"
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_ps1) '
+alias gitroot='cd "$(git rev-parse --show-toplevel)"'
+alias gdiff='git diff --no-index'
+if [[ -x $(command -v wt) ]]; then
+  eval "$(wt config shell init bash)"
+fi
+function zgit() {
+  cd "$(
+    fd --type d --hidden --follow --max-depth 6 --glob .git ~ \
+      --exclude .cache \
+      --exclude .local \
+      --exclude node_modules \
+      --exclude .venv \
+    | sed -r 's#/\.git/?$##' \
+    | fzf
+  )" || return
+}
 function auto_commit() {
   local interval=${1:-300}
   while true; do
