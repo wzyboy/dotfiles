@@ -128,7 +128,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM='auto'
-PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_ps1) '
+alias __git_dir='git rev-parse --show-toplevel >/dev/null 2>&1 && echo " [$(basename $(git rev-parse --show-toplevel))]"'
+PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_dir)$(__git_ps1) '
 
 alias gitroot='cd "$(git rev-parse --show-toplevel)"'
 alias gdiff='git diff --no-index'
