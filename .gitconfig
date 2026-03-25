@@ -24,6 +24,9 @@
 	st = status
 	l = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --topo-order
 	lg = log --graph --abbrev-commit --decorate --date=iso --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%ad%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an <%ae>%C(reset)' --all --topo-order
+	show-merge = "!f() { c=${1:-HEAD}; git diff ${c}^1 ${c}; }; f"
+	branch-prune = "!f(){ current=$(git branch --show-current); gone=$(git branch -vv | awk '/: gone]/{print $1}' | grep -vx \"$current\"); [ -z \"$gone\" ] && { echo \"No local branches with upstream gone.\"; exit 0; }; echo \"$gone\" | xargs -r -n1 git branch -d 2>/dev/null || true; rem=$(git branch -vv | awk '/: gone]/{print $1}' | grep -vx \"$current\"); [ -n \"$rem\" ] && echo \"$rem\" | xargs -r -n1 git branch -D; }; f"
+	push-current = push -u origin HEAD
 [color]
 	ui = auto
 [interactive]
