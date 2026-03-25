@@ -181,17 +181,42 @@ export GOPATH="${HOME}/go"
 path_insert "${GOPATH}/bin"
 # }}}
 
+# openssl {{{
+function s_client() {
+  local server=$1
+  local port=${2:-443}
+  echo | openssl s_client -connect ${server}:${port} -servername ${server} -showcerts 2>&1
+}
+function nth_cert() {
+  local n=$1
+  awk -v n=$n 'BEGIN { cert = ""; i = 0 } /-----BEGIN CERTIFICATE-----/ { i++ } i == n { cert = cert $0 "\n" } END { print cert }'
+}
+function cert_chain() {
+  sed -n '1,/^---$/d;/^---$/,$!p' | sed '/^-----BEGIN CERTIFICATE-----$/,/^-----END CERTIFICATE-----$/d'
+}
+alias cert_info="openssl x509 -text -noout -certopt no_sigdump,no_pubkey"
+# }}}
+
 # misc {{{
 export LESS="-R"
 export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
 export GPG_TTY=$(tty)
+function jless {
+  if [[ -n $1 ]]; then
+    jq -C '.' "$1" | less -FR
+  elif [[ ! -t 0 ]]; then
+    jq -C '.' | less -FR
+  else
+    echo 'usage: jless <file> or <cmd> | jless' >&2
+    return 1
+  fi
+}
 
 try_source /usr/share/bash-completion/bash_completion  # Ubuntu compat
 # }}}
 
 # local {{{
 try_source ~/.bashrc.local
-try_source ~/.bash_aliases
 # }}}
