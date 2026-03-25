@@ -36,7 +36,7 @@ bindsym $Super+r exec --no-startup-id i3-dmenu-desktop
 bindsym $Super+y exec --no-startup-id passmenu
 
 # start more stuff
-bindsym $Super+e exec --no-startup-id thunar
+bindsym $Super+e exec --no-startup-id caja
 bindsym $Super+x exec --no-startup-id stardict
 bindsym $Super+z exec --no-startup-id zeal
 bindsym $Super+Escape exec --no-startup-id pidgin
