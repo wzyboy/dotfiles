@@ -8,3 +8,9 @@ When writing Python:
 - don't use `typing.Union` (e.g. use `Type1 | Type2` instead of `Union[Type1, Type2]`
 - group functions into a class if necessary, but don't create classes for simple features
 - prefer single quotes
+- if you run into missing Python dependency, I might have forgotten to activate venv for you; check `.venv` or similar directory yourself
+- check `.python-version` and/or `pyproject.yaml` file for Python version of the project and use latest syntax supported by that version
+
+## Environment
+
+- if you want to use some CLI tool but it's missing, ask me to install it
