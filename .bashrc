@@ -134,9 +134,18 @@ PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_dir)$(__git_p
 alias gitroot='cd "$(git rev-parse --show-toplevel)"'
 alias gdiff='git diff --no-index'
 
-if [[ -x $(command -v wt) ]]; then
-  eval "$(wt config shell init bash)"
-fi
+case "$OSTYPE" in
+  msys*|cygwin*|win32*)
+    if [[ -x $(command -v git-wt) ]]; then
+      eval "$(git-wt config shell init bash)"
+    fi
+    ;;
+  *)
+    if [[ -x $(command -v wt) ]]; then
+      eval "$(wt config shell init bash)"
+    fi
+    ;;
+esac
 
 function auto_commit() {
   local interval=${1:-300}
