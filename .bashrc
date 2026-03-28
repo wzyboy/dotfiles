@@ -77,7 +77,7 @@ function y() {
 
 function zgit() {
   cd "$(
-    fd --type d --hidden --follow --max-depth 6 --glob .git ~ \
+    fd --hidden --follow --max-depth 6 --glob .git ~ \
       --exclude .cache \
       --exclude .local \
       --exclude node_modules \
