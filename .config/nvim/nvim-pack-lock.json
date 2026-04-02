@@ -36,6 +36,10 @@
       "rev": "92ef2f74f4093edc99db5e9e4cf7e40116a85bd6",
       "src": "https://github.com/mattn/emmet-vim"
     },
+    "fff.nvim": {
+      "rev": "094a35e43521e961d280cbd9785ca87692d22ee5",
+      "src": "https://github.com/dmtrKovalenko/fff.nvim"
+    },
     "fugitive-gitlab.vim": {
       "rev": "3584cf7e607ba7822f991d407a8d780e05aae287",
       "src": "https://github.com/shumphrey/fugitive-gitlab.vim"

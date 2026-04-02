@@ -39,6 +39,7 @@ lua require('nvim-tree').setup()
 lua require('init_fzf')
 lua require('init_lsp')
 lua require('init_cmp')
+lua require('init_fff')
 " }}}
 
 " Mappings {{{

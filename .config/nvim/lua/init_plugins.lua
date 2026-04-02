@@ -5,8 +5,10 @@ end
 vim.g.loaded_nvim_treesitter = 1
 
 vim.pack.add({
+  -- looks
   gh('folke/tokyonight.nvim'),
   gh('itchyny/lightline.vim'),
+  -- utilities
   gh('ibhagwan/fzf-lua'),
   gh('nvim-tree/nvim-web-devicons'),
   gh('jamessan/vim-gnupg'),
@@ -14,6 +16,8 @@ vim.pack.add({
   gh('tpope/vim-rhubarb'),
   gh('shumphrey/fugitive-gitlab.vim'),
   gh('nvim-tree/nvim-tree.lua'),
+  gh('dmtrKovalenko/fff.nvim'),
+  -- completion
   gh('mattn/emmet-vim'),
   gh('dense-analysis/ale'),
   gh('neovim/nvim-lspconfig'),
@@ -24,6 +28,7 @@ vim.pack.add({
   gh('hrsh7th/cmp-buffer'),
   gh('hrsh7th/cmp-nvim-lsp'),
   gh('crispgm/cmp-beancount'),
+  -- file types
   gh('chrisbra/csv.vim'),
   gh('Glench/Vim-Jinja2-Syntax'),
   gh('nvim-treesitter/nvim-treesitter'),
