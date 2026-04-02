@@ -4,20 +4,6 @@ end
 
 vim.g.loaded_nvim_treesitter = 1
 
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name = ev.data.spec.name
-    local kind = ev.data.kind
-
-    if name == 'nvim-treesitter' and (kind == 'install' or kind == 'update') then
-      if not ev.data.active then
-        vim.cmd.packadd('nvim-treesitter')
-      end
-      vim.cmd('TSUpdate')
-    end
-  end,
-})
-
 vim.pack.add({
   gh('folke/tokyonight.nvim'),
   gh('itchyny/lightline.vim'),
