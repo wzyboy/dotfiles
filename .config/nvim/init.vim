@@ -147,3 +147,19 @@ augroup beancount_settings
   autocmd FileType beancount vnoremap S :!bean-split<CR>
 augroup END
 " }}}
+
+" Local Overrides {{{
+let s:local_vimrc = stdpath('config') . '/init.local.vim'
+let s:local_luarc = stdpath('config') . '/lua/init_local.lua'
+
+if filereadable(s:local_vimrc)
+  execute 'source' fnameescape(s:local_vimrc)
+endif
+
+if filereadable(s:local_luarc)
+  execute 'lua dofile(''' . escape(s:local_luarc, '''') . ''')'
+endif
+
+unlet s:local_vimrc
+unlet s:local_luarc
+" }}}
