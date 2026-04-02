@@ -1,37 +1,7 @@
 " vim: foldmethod=marker:
 
 " Plugins {{{
-call plug#begin()
-" looks
-Plug 'folke/tokyonight.nvim'
-Plug 'itchyny/lightline.vim'
-" utilities
-Plug 'ibhagwan/fzf-lua'
-Plug 'nvim-tree/nvim-web-devicons'
-Plug 'jamessan/vim-gnupg'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'shumphrey/fugitive-gitlab.vim'
-Plug 'nvim-tree/nvim-tree.lua'
-" completion
-Plug 'mattn/emmet-vim'
-Plug 'dense-analysis/ale'
-Plug 'neovim/nvim-lspconfig'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-emoji'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'crispgm/cmp-beancount'
-" file types
-Plug 'chrisbra/csv.vim',
-Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'nathangrigg/vim-beancount',       { 'for': 'beancount' }
-Plug 'nvim-treesitter/nvim-treesitter', { 'branch': 'master', 'do': ':TSUpdate' }
-Plug 'ray-x/go.nvim'
-Plug 'vmware-archive/salt-vim',         { 'for': 'sls' }
-call plug#end()
+lua require('init_plugins')
 " }}}
 
 " Basics {{{
