@@ -37,3 +37,12 @@ vim.pack.add({
   gh('nathangrigg/vim-beancount'),
   gh('vmware-archive/salt-vim'),
 }, { confirm = false })
+
+
+require('init_treesitter')
+require('init_neovide')
+require('init_tree')
+require('init_fzf')
+require('init_lsp')
+require('init_cmp')
+require('init_fff')

@@ -24,22 +24,11 @@ endif
 " }}}
 
 " Looks {{{
-lua require('init_treesitter')
-lua require('init_neovide')
-
 set termguicolors
 set noshowmode
 colorscheme tokyonight-night
 
 let g:lightline = {'colorscheme': 'tokyonight'}
-" }}}
-
-" Lua Modules {{{
-lua require('nvim-tree').setup()
-lua require('init_fzf')
-lua require('init_lsp')
-lua require('init_cmp')
-lua require('init_fff')
 " }}}
 
 " Mappings {{{
@@ -50,10 +39,6 @@ nnoremap gx :tabclose<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
 nnoremap <Tab> :NvimTreeFindFileToggle<CR>
-
-nnoremap F <cmd>lua require('fzf-lua').grep_project({resume=true})<CR>
-nnoremap <C-f> <cmd>lua require('fzf-lua').files({resume=true})<CR>
-nnoremap <M-f> <cmd>lua require('fzf-lua').grep({cwd=vim.fn.expand('%:p:h'), resume=true})<CR>
 
 for i in range(1, 9)
   execute 'nnoremap g' . i . ' ' . i . 'gt'
