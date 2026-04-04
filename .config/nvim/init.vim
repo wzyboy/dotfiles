@@ -122,17 +122,6 @@ let g:ale_fixers = {
 \}
 " }}}
 
-" Beancount {{{
-augroup beancount_settings
-  autocmd!
-  autocmd FileType beancount let b:beancount_root = expand('$BEANCOUNT_ROOT')
-  autocmd FileType beancount inoremap <buffer> . .<C-\><C-O>:AlignCommodity<CR>
-  autocmd FileType beancount nnoremap <C-p> :execute ":!bean-doctor context $BEANCOUNT_ROOT %:" . line('.')<CR>
-  autocmd FileType beancount vnoremap L :!bean-format<CR>
-  autocmd FileType beancount vnoremap S :!bean-split<CR>
-augroup END
-" }}}
-
 " Local Overrides {{{
 let s:local_vimrc = stdpath('config') . '/init.local.vim'
 let s:local_luarc = stdpath('config') . '/lua/init_local.lua'
