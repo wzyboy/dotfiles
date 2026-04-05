@@ -18,6 +18,11 @@ require('lsp_signature').setup({
   hint_enable = false,
 })
 
+-- capabilities
+vim.lsp.config('*', {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+})
+
 -- Setup language servers.
 vim.lsp.enable('ty')
 -- vim.lsp.enable('pyright')
