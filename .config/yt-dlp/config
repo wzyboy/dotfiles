@@ -10,4 +10,5 @@
 #-f 401/315+251
 
 # Prepend UTC datetime in filename
--o "%(release_timestamp>%Y-%m-%d_%H-%M-%S)s - %(title)s [%(id)s].%(ext)s"
+#-o "%(release_timestamp>%Y-%m-%d_%H-%M-%S)s - %(title)s [%(id)s].%(ext)s"
+-o "%(timestamp>%Y-%m-%d_%H-%M-%S)s - %(title)s [%(id)s].%(ext)s"
