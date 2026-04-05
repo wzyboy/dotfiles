@@ -7,10 +7,10 @@ local has_words_before = function()
 end
 
 cmp.setup({
-  -- REQUIRED - you must specify a snippet engine
+  -- Use Neovim's built-in snippet support for LSP snippet completions.
   snippet = {
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.snippet.expand(args.body)
     end,
   },
   -- Supertab-like completion.
