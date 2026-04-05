@@ -23,7 +23,7 @@ local config = {
     initial_rows = 30,
     tab_bar_at_bottom = true,
     use_fancy_tab_bar = false,
-    font = wezterm.font 'Iosevka Term',
+    font = wezterm.target_triple:find('windows') and wezterm.font 'Sarasa Term CL' or wezterm.font 'Iosevka Term',
     font_size = 12.0,
     launch_menu = {},
     leader = { key = 'b', mods = 'CTRL' },
