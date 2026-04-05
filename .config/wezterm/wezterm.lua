@@ -10,6 +10,8 @@ if wezterm.gui then
     )
 end
 
+local main_font_family = wezterm.target_triple:find('windows') and 'Sarasa Term CL' or 'Iosevka Term'
+
 local config = {
     audible_bell = 'Disabled',
     check_for_updates = false,
@@ -23,8 +25,14 @@ local config = {
     initial_rows = 30,
     tab_bar_at_bottom = true,
     use_fancy_tab_bar = false,
-    font = wezterm.target_triple:find('windows') and wezterm.font 'Sarasa Term CL' or wezterm.font 'Iosevka Term',
+    font = wezterm.font(main_font_family),
     font_size = 12.0,
+    font_rules = {
+      {
+        intensity = 'Bold',
+        font = wezterm.font({ family = main_font_family, weight = 'Regular' }),
+      },
+    },
     launch_menu = {},
     leader = { key = 'b', mods = 'CTRL' },
     disable_default_key_bindings = true,
