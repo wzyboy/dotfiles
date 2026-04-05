@@ -11,6 +11,7 @@ local languages = {
 
 local disabled_filetypes = {
   dockerfile = true,
+  nginx = true,
 }
 
 treesitter.setup({})
