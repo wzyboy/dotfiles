@@ -1,5 +1,5 @@
 -- Setup nvim-cmp.
-local cmp = require'cmp'
+local cmp = require('cmp')
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -69,21 +69,5 @@ cmp.setup({
       })[entry.source.name]
       return vim_item
     end,
-  },
-})
-
--- Setup go.nvim
-local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.go",
-  callback = function()
-   require('go.format').goimports()
-  end,
-  group = format_sync_grp,
-})
-
-require('go').setup({
-  lsp_inlay_hints = {
-    enable = false,
   },
 })

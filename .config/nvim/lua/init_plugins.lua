@@ -36,7 +36,7 @@ vim.pack.add({
   gh('ray-x/go.nvim'),
   gh('nathangrigg/vim-beancount'),
   gh('vmware-archive/salt-vim'),
-}, { confirm = false })
+})
 
 
 require('init_treesitter')
@@ -45,4 +45,5 @@ require('init_tree')
 require('init_fzf')
 require('init_lsp')
 require('init_cmp')
+require('init_go')
 require('init_fff')
