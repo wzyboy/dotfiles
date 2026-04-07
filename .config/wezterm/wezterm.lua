@@ -1,5 +1,9 @@
-local wezterm = require 'wezterm'
+local wezterm = require('wezterm')
 local act = wezterm.action
+
+if not wezterm.target_triple:find('windows') then
+    return require('wezterm-minimal')
+end
 
 local copy_mode = nil
 if wezterm.gui then
@@ -10,7 +14,7 @@ if wezterm.gui then
     )
 end
 
-local main_font_family = wezterm.target_triple:find('windows') and 'Sarasa Term CL' or 'Iosevka Term'
+local main_font_family = 'Sarasa Term CL'
 
 local config = {
     audible_bell = 'Disabled',
@@ -78,14 +82,9 @@ local config = {
     set_environment_variables = {},
 }
 
-if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    local git_bash = 'C:/Program Files/Git/bin/bash.exe'
-    config.default_prog = { git_bash, '-i' }
-    table.insert(config.launch_menu, { label = 'Git Bash', args = { git_bash, '-i' } })
-else
-    config.default_prog = { '/bin/bash', '-i' }
-    table.insert(config.launch_menu, { label = 'bash', args = { 'bash', '-i' } })
-end
+local git_bash = 'C:/Program Files/Git/bin/bash.exe'
+config.default_prog = { git_bash, '-i' }
+table.insert(config.launch_menu, { label = 'Git Bash', args = { git_bash, '-i' } })
 
 wezterm.on('update-right-status', function(window, pane)
   -- Each element holds the text for a cell in a "powerline" style << fade
