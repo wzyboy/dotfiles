@@ -5,6 +5,8 @@ if vim.g.neovide then
     else
         vim.o.guifont = 'Iosevka Term:h12'
     end
-    --vim.g.neovide_cursor_animation_length = 0
-    vim.opt.clipboard = "unnamedplus"
+    local function copy() vim.cmd([[normal! "+y]]) end
+    local function paste() vim.api.nvim_paste(vim.fn.getreg("+"), true, -1) end
+    vim.keymap.set("v", "<S-C-c>", copy, { silent = true, desc = "Copy" })
+    vim.keymap.set({ "n", "i", "v", "c", "t" }, "<S-C-v>", paste, { silent = true, desc = "Paste" })
 end
