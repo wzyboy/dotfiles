@@ -75,16 +75,17 @@ function y() {
   rm -f -- "$tmp"
 }
 
+function __git_repos() {
+  fd --hidden --follow --max-depth 6 --glob .git ~ \
+    --exclude .cache \
+    --exclude .local \
+    --exclude node_modules \
+    --exclude .venv \
+    -X dirname
+}
+
 function zgit() {
-  cd "$(
-    fd --hidden --follow --max-depth 6 --glob .git ~ \
-      --exclude .cache \
-      --exclude .local \
-      --exclude node_modules \
-      --exclude .venv \
-    | sed -r 's#/\.git/?$##' \
-    | fzf
-  )" || return
+  cd "$(__git_repos | fzf)" || return
 }
 # }}}
 
