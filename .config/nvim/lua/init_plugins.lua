@@ -6,11 +6,11 @@ vim.g.loaded_nvim_treesitter = 1
 
 vim.pack.add({
   -- looks
+  gh('nvim-tree/nvim-web-devicons'),
   gh('folke/tokyonight.nvim'),
-  gh('itchyny/lightline.vim'),
+  gh('nvim-lualine/lualine.nvim'),
   -- utilities
   gh('ibhagwan/fzf-lua'),
-  gh('nvim-tree/nvim-web-devicons'),
   gh('jamessan/vim-gnupg'),
   gh('tpope/vim-fugitive'),
   gh('tpope/vim-rhubarb'),
@@ -41,6 +41,7 @@ vim.pack.add({
 
 require('init_treesitter')
 require('init_neovide')
+require('init_lualine')
 require('init_tree')
 require('init_fzf')
 require('init_lsp')

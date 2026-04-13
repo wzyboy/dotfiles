@@ -27,8 +27,6 @@ endif
 set termguicolors
 set noshowmode
 colorscheme tokyonight-night
-
-let g:lightline = {'colorscheme': 'tokyonight'}
 " }}}
 
 " Mappings {{{
