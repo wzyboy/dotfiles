@@ -52,10 +52,6 @@
       "rev": "3cfece46344d4f35099d3b207c7cae76da0b48d6",
       "src": "https://github.com/ray-x/go.nvim"
     },
-    "lightline.vim": {
-      "rev": "e358557e1a9f9fc860416c8eb2e34c0404078155",
-      "src": "https://github.com/itchyny/lightline.vim"
-    },
     "lsp_signature.nvim": {
       "rev": "af7e4074d85d785cf6614352ba9ad3b28a1f8a56",
       "src": "https://github.com/ray-x/lsp_signature.nvim"
