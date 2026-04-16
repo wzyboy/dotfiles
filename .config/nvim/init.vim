@@ -36,7 +36,7 @@ nnoremap T :tabnew<CR>
 nnoremap gx :tabclose<CR>
 nnoremap gs :%s/
 nnoremap <C-g> :echo expand('%:p')<CR>
-nnoremap <Tab> :NvimTreeFindFileToggle<CR>
+nnoremap <Tab> :NvimTreeFindFileToggle!<CR>
 
 for i in range(1, 9)
   execute 'nnoremap g' . i . ' ' . i . 'gt'
