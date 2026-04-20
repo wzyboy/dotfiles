@@ -228,7 +228,7 @@ assign [class="Gimp"] gimp
 
 
 # Autostarts
-exec_always --no-startup-id picom
+# exec_always --no-startup-id picom
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id thunar --daemon
 exec --no-startup-id xss-lock -- lock
