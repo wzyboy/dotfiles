@@ -25,7 +25,7 @@ bindsym XF86Display exec --no-startup-id "arandr"
 floating_modifier $Super
 
 # start a terminal
-bindsym $Super+Return exec --no-startup-id alacritty
+bindsym $Super+Return exec --no-startup-id ghostty
 
 # kill focused window
 bindsym $Super+c kill
