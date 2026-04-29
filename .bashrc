@@ -56,6 +56,7 @@ alias egrep='egrep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias pcregrep='pcregrep --color=auto'
 alias df='df -xtmpfs -xdevtmpfs -x efivarfs -l'
+alias ag='ag --nogroup'
 # }}}
 
 # navigation {{{
