@@ -4,5 +4,6 @@ window-decoration = none
 shell-integration = none
 cursor-style-blink = false
 confirm-close-surface = false
+mouse-hide-while-typing = true
 window-inherit-working-directory = false
 keybind = ctrl+shift+x=text:\x02\x08
