@@ -134,7 +134,6 @@ alias __git_dir='git rev-parse --show-toplevel >/dev/null 2>&1 && echo " [$(base
 PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]:\w\n\$\[\033[00m\]$(__git_dir)$(__git_ps1) '
 
 alias gitroot='cd "$(git rev-parse --show-toplevel)"'
-alias gdiff='git diff --no-index'
 
 case "$OSTYPE" in
   msys*|cygwin*|win32*)
@@ -159,6 +158,53 @@ function auto_commit() {
     fi
     sleep "$interval"
   done
+}
+
+function gdiff() {
+  local left right
+  local -a orig_args opts paths
+
+  orig_args=("$@")
+
+  while (($#)); do
+    case $1 in
+      --)
+        shift
+        break
+        ;;
+      -*)
+        opts+=("$1")
+        shift
+        ;;
+      *)
+        break
+        ;;
+    esac
+  done
+
+  if (($# == 2)); then
+    left=$1
+    right=$2
+
+    if [[ -d $left && -d $right ]] &&
+       git -C "$left" rev-parse --is-inside-work-tree >/dev/null 2>&1 &&
+       git -C "$right" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+      while IFS= read -r -d '' path; do
+        paths+=(":(literal)$path")
+      done < <(
+        {
+          git -C "$left" ls-files -z --cached --others --exclude-standard
+          git -C "$right" ls-files -z --cached --others --exclude-standard
+        } | sort -zu
+      )
+
+      ((${#paths[@]})) || return 0
+      git diff --no-index "${opts[@]}" -- "$left" "$right" "${paths[@]}"
+      return
+    fi
+  fi
+
+  git diff --no-index "${orig_args[@]}"
 }
 # }}}
 
