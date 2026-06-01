@@ -6,6 +6,7 @@ When writing Python:
 - use PEP-585 built-in generics (e.g. use `list[str]` instead of `List[str]`)
 - don't use `typing.Optional` (e.g. use `str | None` instead of `Optional[str]`)
 - don't use `typing.Union` (e.g. use `Type1 | Type2` instead of `Union[Type1, Type2]`
+- don't add `from __future__ import annotations` unless Python version requires it
 - group functions into a class if necessary, but don't create classes for simple features
 - prefer single quotes
 - if you run into missing Python dependency, I might have forgotten to activate venv for you; check `.venv` or similar directory yourself
