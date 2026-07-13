@@ -11,6 +11,7 @@ When writing Python:
 - prefer single quotes
 - if you run into missing Python dependency, I might have forgotten to activate venv for you; check `.venv` or similar directory yourself
 - check `.python-version` and/or `pyproject.yaml` file for Python version of the project and use latest syntax supported by that version
+- when adding dependencies, prefer running `uv add` to hand-edit `pyproject.toml` so that the latest version is automatically resolved and added
 
 ## Environment
 
