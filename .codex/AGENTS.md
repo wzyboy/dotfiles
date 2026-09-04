@@ -13,6 +13,7 @@ When writing Python:
 - run pytest with `pytest ...`, not `.venv/bin/python -m pytest ...`, to avoid sandbox restrictions
 - check `.python-version` and/or `pyproject.yaml` file for Python version of the project and use latest syntax supported by that version
 - when adding dependencies, prefer running `uv add` to hand-edit `pyproject.toml` so that the latest version is automatically resolved and added
+- don't add negative tests. for example, if i ask you to "remove feautre X", don't write test to assert X is absent.
 
 ## Environment
 
