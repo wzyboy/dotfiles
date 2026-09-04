@@ -5,6 +5,7 @@
 	editor = nvim
 	quotePath = false
 	pager = delta
+	autocrlf = false
 [init]
 	defaultBranch = master
 [commit]
