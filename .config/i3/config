@@ -42,7 +42,7 @@ bindsym $Super+z exec --no-startup-id zeal
 bindsym $Super+Escape exec --no-startup-id pidgin
 bindsym Control+Mod1+l exec --no-startup-id xset s activate
 bindsym Control+Mod1+Delete exec --no-startup-id systemctl suspend
-bindsym Print exec --no-startup-id flameshot full -p ~/Desktop/ -c
+# bindsym Print exec --no-startup-id flameshot full -p ~/Desktop/ -c
 bindsym Control+Print exec --no-startup-id flameshot gui
 bindsym Control+Mod1+f exec --no-startup-id xfce4-clipman-history
 
