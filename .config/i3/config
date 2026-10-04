@@ -29,7 +29,6 @@ bindsym $Super+Return exec --no-startup-id kitty
 
 # kill focused window
 bindsym $Super+c kill
-bindsym Mod1+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $Super+r exec --no-startup-id i3-dmenu-desktop
