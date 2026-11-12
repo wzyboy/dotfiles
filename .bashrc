@@ -205,6 +205,7 @@ export MOSH_PREDICTION_DISPLAY=always
 export QT_LOGGING_RULES='*=false'
 export ANSIBLE_FORCE_COLOR=1
 export GPG_TTY=$(tty)
+alias t="tmux has-session -t $USER && exec tmux attach -t $USER || exec tmux new -s $USER"
 function jless {
   if [[ -n $1 ]]; then
     jq -C '.' "$1" | less -FR
