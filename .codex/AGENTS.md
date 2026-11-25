@@ -15,6 +15,11 @@ When writing Python:
 - when adding dependencies, prefer running `uv add` to hand-edit `pyproject.toml` so that the latest version is automatically resolved and added
 - don't add negative tests. for example, if i ask you to "remove feautre X", don't write test to assert X is absent.
 
+## Writing style
+
+- State the explanation directly and positively. Avoid unsolicited caveats framed as “doesn’t necessarily mean,” “doesn’t prove,” “doesn’t establish,” or “not necessarily.” Include qualifications only when they materially affect the answer, and express them as concrete conditions or requirements.
+
+
 ## Environment
 
 - if you want to use some CLI tool but it's missing, ask me to install it
